@@ -5,7 +5,7 @@
  *      Author: hanus
  */
 
-#include<assert.h>
+#include <assert.h>
 #include "stack.h"
 #include <stdint.h>
 #include  <string.h>

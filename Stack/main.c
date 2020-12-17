@@ -7,16 +7,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include<assert.h>
+#include <assert.h>
 #include "stack.h"
 
-void test_empty_stack(){
+void test_empty_stack()
+{
 Stack s1 = stack_new(20);
 Stack *stk = &s1;
 assert(stack_empty(stk) == 1);
 }
 
-void test_full_stack(){
+void test_full_stack()
+{
 Stack s1 = stack_new(2);
 Stack *stk = &s1;
 StackResult res;
@@ -30,7 +32,8 @@ assert(stack_full(stk) == 1);
 
 }
 
-void test_stack(){
+void test_stack()
+{
 Stack s1 = stack_new(5);
 Stack *stk = &s1;
 StackResult res;
@@ -56,13 +59,15 @@ assert(stack_empty(stk) == 1);
 //Evaluate postfix expression using stack. Example: postfix fix expression is 6 5 2 3 + 8 * + 3 + *
 //Hint: When number is seen, it is pushed onto the stack;
 //when an operator is seen, the operator is applied to the two numbers that are popped from the stack, and the result is pushed onto the stack.
-void test_post_fix(char* exp){
+void test_post_fix(char* exp)
+{
 Stack s1=stack_new(20);
 Stack *stk=&s1;
 StackResult res;
 
 //int n=("%d",exp[0]-'0');
-for (int i=0;exp[i];++i){
+for (int i=0;exp[i];++i)
+{
     if(exp[i]-'0'>=0)
         stk=stack_push(stk,exp[i]-'0',&res);
     else{
